@@ -189,12 +189,18 @@ void creaRettangoloParticolare() {
     carattere2 = cambiaCarattere();
     h = chiediNumeroLato(2);
     b = chiediNumeroLato(3);
-    
-    for (i=h; i > 0; i--) {
+    int f = 0;
+    int g = 0;
+    if (h > b) {
+        f = h - b;
+    }else if (b<f) {
+        g = b - h;
+    }
+    for (i=h+g; i > 0; i--) {
         for (c=0; c <i ; c++) {
             printf(" %c", carattere2);
         }
-        for (x=b+1; x > i; x--) {
+        for (x=b+f; x > i; x--) {
             printf(" %c", carattere);
         }
         printf("\n");
