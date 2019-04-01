@@ -23,6 +23,7 @@ int chiediNumeroLato(int name) {
             printf("Inserisci numero base: ");
         }
         scanf("%d", &numero);
+        printf("\n");
         if (numero < 0) {
             printf("Inserire un valore positivo!\n");
         }
