@@ -65,6 +65,7 @@ void mostraMenuRettangolo() {
             creaRettangoloPieno();
             break;
         } else if (vuoto != NULL) {
+            creaRettangoloVuoto();
             break;
         } else if (particolare != NULL) {
             creaRettangoloParticolare();

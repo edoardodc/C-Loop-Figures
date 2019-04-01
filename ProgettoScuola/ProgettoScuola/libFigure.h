@@ -17,12 +17,10 @@ int chiediNumeroLato(int name) {
     do {
         if (name == 1) {
             printf("Inserisci numero lato: ");
-            printf("\n");
         }else if (name == 2) {
             printf("Inserisci numero altezza: ");
         }else if (name == 3) {
             printf("Inserisci numero base: ");
-            printf("\n");
         }
         scanf("%d", &numero);
         if (numero < 0) {
