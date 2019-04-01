@@ -1,17 +1,9 @@
-//
-//  libFigure.h
-//  Progetto_Scuola
-//
-//  Created by JJMacRic on 20/03/2019.
-//  Copyright © 2019 Riccardo Lapi. All rights reserved.
-//
-
 #ifndef libFigure_h
 #define libFigure_h
 #include <math.h>
-
-
 #endif /* libFigure_h */
+
+/* Codice libreria */
 
 char cambiaCarattere() {
     char c;
@@ -58,7 +50,7 @@ void creaTriangoloEquilatero() {
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
-
+    
     for (i=nl; i > 0; i--) {
         for (c=0; c<i; c++) {
             printf(" ");
@@ -76,7 +68,7 @@ void creaQuadratoVuoto() {
     char carattere;
     carattere = cambiaCarattere();
     h = chiediNumeroLato(1);
-
+    
     for (i=h; i != 0; i--) {
         for (c=h; c!=0; c--) {
             if (i==1 || i == h) {
@@ -106,7 +98,7 @@ void creaQuadratoPieno() {
     }
 }
 
-int creaQuadratoParticolare() {
+void creaQuadratoParticolare() {
     
     int c, i, x, nl;
     char carattere;
@@ -114,7 +106,7 @@ int creaQuadratoParticolare() {
     carattere = cambiaCarattere();
     carattere2 = cambiaCarattere();
     nl = chiediNumeroLato(1);
-
+    
     for (i = nl; i > 0; i--) {
         for (c=0; c<i; c++) {
             printf(" %c", carattere2);
@@ -124,10 +116,9 @@ int creaQuadratoParticolare() {
         }
         printf("\n");
     }
-    
-    return 0;
 }
-int creaRettangoloVuoto() {
+
+void creaRettangoloVuoto() {
     int c, i, h, b;
     char carattere;
     carattere = cambiaCarattere();
@@ -146,10 +137,9 @@ int creaRettangoloVuoto() {
         }
         printf("\n");
     }
-    return 0;
 }
 
-int creaRettangoloPieno() {
+void creaRettangoloPieno() {
     char carattere;
     carattere = cambiaCarattere();
     int c, i, h, b;
@@ -163,11 +153,10 @@ int creaRettangoloPieno() {
         printf("\n");
         
     }
-    return 0;
 }
 
 
-int creaRettangoloParticolare() {
+void creaRettangoloParticolare() {
     int c, i, x, b, h;
     char carattere;
     char carattere2;
@@ -185,42 +174,32 @@ int creaRettangoloParticolare() {
         }
         printf("\n");
     }
-    
-    return 0;
 }
 
 
 
-int creaTriangoloNumero()
-{
+void creaTriangoloNumero() {
     int i, space, h = 5, k = 0, c = 0, c1 = 0;
     
-    for(i=1; i<=h; ++i)
-    {
-        for(space=1; space <= h-i; ++space)
-        {
+    for(i=1; i<=h; ++i) {
+        for(space=1; space <= h-i; ++space) {
             printf("  ");
             ++c;
         }
-        while(k != 2*i-1)
-        {
-            if (c <= h-1)
-            {
+        while(k != 2*i-1) {
+            if (c <= h-1) {
                 printf("%d ", i+k);
                 ++c;
-            }
-            else
-            {
+                
+            } else {
                 ++c1;
                 printf("%d ", (i+k-2*c1));
             }
             ++k;
         }
         c1 = c = k = 0;
-        
         printf("\n");
     }
-    return 0;
 }
 
 
@@ -230,17 +209,13 @@ void creaEllisse()
     carattere = cambiaCarattere();
     int raggio = 5;
     int i,j;
-    for (i=0; i<=2*raggio; i++)
-    {
-        for (j=0; j<=2*raggio; j++)
-        {
+    for (i=0; i<=2*raggio; i++) {
+        for (j=0; j<=2*raggio; j++) {
             double distance = sqrt((double)(i-raggio)*(i-raggio) + (j-raggio)*(j-raggio));
-            if (distance>raggio-0.5 && distance<raggio+0.5)
-            {
+            if (distance>raggio-0.5 && distance<raggio+0.5) {
                 printf("%c", carattere);
-            }
-            else
-            { printf(" ");}
+            } else {
+                printf(" ");}
         }
         printf("\n");
     }
@@ -254,8 +229,7 @@ void creaRombo() {
     
     s = h - 1;
     
-    for (k = 1; k <= h; k++)
-    {
+    for (k = 1; k <= h; k++) {
         for (c = 1; c <= s; c++)
             printf(" ");
         
@@ -263,27 +237,24 @@ void creaRombo() {
         
         for (c = 1; c <= 2*k-1; c++)
             printf("%c", carattere);
-
+        
         printf("\n");
     }
     
     s = 1;
     
-    for (k = 1; k <= h - 1; k++)
-    {
+    for (k = 1; k <= h - 1; k++) {
         for (c = 1; c <= s; c++)
             printf(" ");
-        
         s++;
-        
         for (c = 1 ; c <= 2*(h-k)-1; c++)
             printf("%c", carattere);
-
+        
         printf("\n");
     }
 }
 
-int creaQuadratoPienoNumerato() {
+void creaQuadratoPienoNumerato() {
     int c, i, nl = 3, num = 0;
     
     for (i=nl; i != 0; i--) {
@@ -294,7 +265,6 @@ int creaQuadratoPienoNumerato() {
         printf("\n");
         
     }
-    return 0;
 }
 
 void creaTriangoloEquilateroVuoto() {
@@ -304,13 +274,12 @@ void creaTriangoloEquilateroVuoto() {
     h = chiediNumeroLato(2);
     
     for(i=1; i<=h; i++) {
-
+        
         for(j=i; j<h; j++) {
             printf(" ");
         }
         
-        for(j=1; j<=(2*i-1); j++)
-        {
+        for(j=1; j<=(2*i-1); j++) {
             if(i==h || j==1 || j==(2*i-1)) {
                 printf("%c", carattere);
             } else {
@@ -346,7 +315,8 @@ void creaTriangoloRettangoloVuoto() {
 
 void creaCasa() {
     
-    int c, i, x, nl;
+    int c, i, x, nl, a, b, h;
+;
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
@@ -361,8 +331,6 @@ void creaCasa() {
         printf("\n");
     }
     
-    int a, b, h;
-
     h = nl;
     
     for (b=h; b != 0; b--) {
@@ -384,7 +352,6 @@ void creaClessidra() {
     char carattere;
     carattere = cambiaCarattere();
     n = chiediNumeroLato(1);
-    int c, a, x;
     
     for(i = 1; i <= n; i++) {
         for(j = 1; j < i; j++)
@@ -404,6 +371,4 @@ void creaClessidra() {
             printf("%c ", carattere);
         printf("\n");
     }
-    
-    
 }
