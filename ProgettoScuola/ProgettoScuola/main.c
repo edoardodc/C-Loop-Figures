@@ -14,10 +14,10 @@ void mostraMenuQuadrato() {
     char  buff[1000];
     char *pieno, *vuoto, *particolare, *numerato;
     
-    printf("Fantastico! Ecco qui i tipi di quadrato:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n\n");
+    printf("Fantastico! Ecco qui i tipi di quadrati:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n\n");
     
     do {
-        printf("Inserire tipo di quadrati tra quelli elencati: ");
+        printf("Inserire tipo di quadrato tra quelli elencati: ");
         scanf("%s",buff);
         
         pieno = strstr(buff, "pieno");
@@ -38,7 +38,7 @@ void mostraMenuQuadrato() {
             creaQuadratoPienoNumerato();
             break;
         }else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -47,10 +47,10 @@ void mostraMenuRettangolo() {
     char  buff[1000];
     char *pieno, *vuoto, *particolare;
     
-    printf("Fantastico! Ecco qui i tipi di rettangolo:\n\n - Pieno\n - Vuoto\n - Particolare\n\n");
+    printf("Fantastico! Ecco qui i tipi di rettangoli:\n\n - Pieno\n - Vuoto\n - Particolare\n\n");
     
     do {
-        printf("Inserire tipo di rettangoli tra quelli elencati: ");
+        printf("Inserire tipo di rettangolo tra quelli elencati: ");
         scanf("%s",buff);
         
         pieno = strstr(buff, "pieno");
@@ -66,7 +66,7 @@ void mostraMenuRettangolo() {
             creaRettangoloParticolare();
             break;
         } else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -76,7 +76,7 @@ void mostraMenuTriangoliEquilatero() {
     char  buff[1000];
     char *vuoto, *pieno;
     
-    printf("Fantastico! Ecco qui i tipi di triangoli equilatero:\n\n - Vuoto\n - Pieno\n\n");
+    printf("Fantastico! Ecco qui i tipi di triangoli equilateri:\n\n - Vuoto\n - Pieno\n\n");
     
     do {
         printf("Inserire tipo di triangoli equilatero tra quelli elencati: ");
@@ -92,7 +92,7 @@ void mostraMenuTriangoliEquilatero() {
             creaTriangoloEquilateroVuoto();
             break;
         } else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -104,7 +104,7 @@ void mostraMenuTriangoliRettangoli() {
     printf("Fantastico! Ecco qui i tipi di triangoli rettangoli:\n\n - Vuoto\n - Pieno\n\n");
     
     do {
-        printf("Inserire tipo di triangoli rettangoli tra quelli elencati: ");
+        printf("Inserire tipo di triangolo rettangolo tra quelli elencati: ");
         scanf("%s",buff);
         
         vuoto = strstr(buff, "vuoto");
@@ -117,7 +117,7 @@ void mostraMenuTriangoliRettangoli() {
             creaTriangoloRettangoloVuoto();
             break;
         } else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -146,7 +146,7 @@ void mostraMenuTriangoli() {
             creaTriangoloNumero();
             break;
         } else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -160,7 +160,6 @@ int main() {
         int scelta, entraNellaConclusione = 1;
         
         printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Triangolo\n - Quadrato\n - Rettangolo\n - Ellisse\n - Rombo\n - Casa\n - Clessidra\n\n");
-        
         printf("Inserire nome figura: ");
         scanf("%s",buff);
         
@@ -187,7 +186,7 @@ int main() {
         }else if (clessidra != NULL){
             creaClessidra();
         } else {
-            printf("Temo proprio che %s non esista\n", buff);
+            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
             entraNellaConclusione = -1;
         }
             
