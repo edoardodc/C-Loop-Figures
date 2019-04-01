@@ -36,6 +36,7 @@ void mostraMenuQuadrato() {
             break;
         } else if (numerato != NULL) {
             creaQuadratoPienoNumerato();
+            break;
         }else {
             printf("Temo proprio che %s non esista\n", buff);
         }
@@ -154,7 +155,7 @@ void mostraMenuTriangoli() {
 
 int main() {
     do {
-        char buff[1000];
+        char buff[100];
         char *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
         int scelta, entraNellaConclusione = 1;
         
@@ -191,7 +192,7 @@ int main() {
         }
             
         if (entraNellaConclusione == 1) {
-            printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            printf("Fantastico! premere un tasto qualsiasi se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
             scanf("%d", &scelta);
             
             if (scelta == 2) {
