@@ -165,7 +165,7 @@ int main() {
         
         printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
         printf("Inserire nome figura: ");
-        scanf("%s",buff);
+        scanf("%s", buff);
         
         triangolo = strstr(buff, "triangolo");
         quadrato = strstr(buff, "quadrato");
@@ -196,7 +196,7 @@ int main() {
             
         if (entraNellaConclusione == 1) {
             printf("\n");
-            printf("Fantastico! premere un tasto qualsiasi se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
             scanf("%d", &scelta);
             
             if (scelta == 2) {
@@ -205,6 +205,6 @@ int main() {
         }
         
     } while (1);
-    printf("D'accordo! (≧◡≦) grazie per essere stati con noi (◑‿◐)\n");
+    printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
 
 }
