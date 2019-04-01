@@ -12,9 +12,9 @@
 
 void mostraMenuQuadrato() {
     char  buff[1000];
-    char *pieno, *vuoto, *particolare, *numerato;
+    char *pieno, *vuoto, *particolare, *numerato, *farcito;
     
-    printf("Fantastico! Ecco qui i tipi di quadrati:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n\n");
+    printf("Fantastico! Ecco qui i tipi di quadrati:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n - Farcito\n\n");
     
     do {
         printf("Inserire tipo di quadrato tra quelli elencati: ");
@@ -24,6 +24,7 @@ void mostraMenuQuadrato() {
         vuoto = strstr(buff, "vuoto");
         particolare = strstr(buff, "particolare");
         numerato = strstr(buff, "numerato");
+        farcito = strstr(buff, "farcito");
         
         if (pieno != NULL) {
             creaQuadratoPieno();
@@ -37,7 +38,10 @@ void mostraMenuQuadrato() {
         } else if (numerato != NULL) {
             creaQuadratoPienoNumerato();
             break;
-        }else {
+        }else if (farcito != NULL) {
+            creaQuadratoFarcito();
+            break;
+        }else{
             printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
         }
     } while (1);

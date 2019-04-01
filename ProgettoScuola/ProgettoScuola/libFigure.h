@@ -84,6 +84,29 @@ void creaQuadratoVuoto() {
     }
 }
 
+void creaQuadratoFarcito() {
+    int c, i, h;
+    char carattere;
+    char carattere2;
+    carattere = cambiaCarattere();
+    carattere2 = cambiaCarattere();
+    h = chiediNumeroLato(1);
+    
+    for (i=h; i != 0; i--) {
+        for (c=h; c!=0; c--) {
+            if (i==1 || i == h) {
+                printf(" %c", carattere);
+            }else if ((c==1) || (c == h)){
+                printf(" %c", carattere);
+            }else{
+                printf(" %c", carattere2);
+            }
+        }
+        printf("\n");
+    }
+}
+
+
 void creaQuadratoPieno() {
     int c, i, nl;
     char carattere;
