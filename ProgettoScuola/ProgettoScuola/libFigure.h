@@ -347,7 +347,6 @@ void creaTriangoloRettangoloVuoto() {
 void creaCasa() {
     
     int c, i, x, nl, a, b, h;
-;
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);

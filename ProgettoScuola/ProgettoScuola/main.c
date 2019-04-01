@@ -13,7 +13,6 @@
 void mostraMenuQuadrato() {
     char  buff[1000];
     char *pieno, *vuoto, *particolare, *numerato, *farcito;
-
     printf("Fantastico! Ecco qui i tipi di quadrati:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n - Farcito\n\n");
 
     do {
