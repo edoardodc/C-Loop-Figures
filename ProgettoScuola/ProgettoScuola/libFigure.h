@@ -84,6 +84,8 @@ void creaQuadratoVuoto() {
     }
 }
 
+
+
 void creaQuadratoFarcito() {
     int c, i, h;
     char carattere;

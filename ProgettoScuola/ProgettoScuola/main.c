@@ -163,7 +163,7 @@ int main() {
         char *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
         int scelta, entraNellaConclusione = 1;
         
-        printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Triangolo\n - Quadrato\n - Rettangolo\n - Ellisse\n - Rombo\n - Casa\n - Clessidra\n\n");
+        printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
         printf("Inserire nome figura: ");
         scanf("%s",buff);
         
