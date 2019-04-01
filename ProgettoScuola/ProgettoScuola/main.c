@@ -6,8 +6,6 @@
 //  Copyright © 2019 Edoardo de Cal. All rights reserved.
 //
 
-//!!!Controllare se il lato inserito e un numero pari dispari o lettera ecc..
-
 #include <stdio.h>
 #include "libFigure.h"
 
@@ -152,11 +150,13 @@ void mostraMenuTriangoli() {
     } while (1);
 }
 
+
+
 int main() {
     do {
         char buff[1000];
         char *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
-        int scelta;
+        int scelta, entraNellaConclusione = 1;
         
         printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Triangolo\n - Quadrato\n - Rettangolo\n - Ellisse\n - Rombo\n - Casa\n - Clessidra\n\n");
         
@@ -187,14 +187,18 @@ int main() {
             creaClessidra();
         } else {
             printf("Temo proprio che %s non esista\n", buff);
+            entraNellaConclusione = -1;
+        }
+            
+        if (entraNellaConclusione == 1) {
+            printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            scanf("%d", &scelta);
+            
+            if (scelta == 2) {
+                break;
+            }
         }
         
-        printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
-        scanf("%d", &scelta);
-        
-        if (scelta == 2) {
-            break;
-        }
     } while (1);
     printf("D'accordo! (≧◡≦) grazie per essere stati con noi (◑‿◐)\n");
 
