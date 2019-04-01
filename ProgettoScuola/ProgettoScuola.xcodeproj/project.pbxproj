@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		110E3EB6224D4BF4005EDBC4 /* ProgettoScuola */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProgettoScuola; sourceTree = BUILT_PRODUCTS_DIR; };
 		110E3EB9224D4BF4005EDBC4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		116E8ED3224D502B00BC9E5B /* libFigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libFigure.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				110E3EB9224D4BF4005EDBC4 /* main.c */,
+				116E8ED3224D502B00BC9E5B /* libFigure.h */,
 			);
 			path = ProgettoScuola;
 			sourceTree = "<group>";
