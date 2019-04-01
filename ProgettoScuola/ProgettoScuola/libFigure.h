@@ -7,7 +7,7 @@
 
 char cambiaCarattere() {
     char c;
-    printf("Inseire un carattere: ");
+    printf("Inserire un carattere: ");
     scanf(" %c", &c);
     return c;
 }
