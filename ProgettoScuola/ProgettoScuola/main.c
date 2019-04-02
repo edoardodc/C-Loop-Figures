@@ -1,10 +1,7 @@
 //
 //  main.c
 //  ProgettoScuola
-//
-//  Created by Edoardo de Cal and Riccardo Lapi on 28/03/2019.
-//  Copyright © 2019 Edoardo de Cal. All rights reserved.
-//
+
 
 #include <stdio.h>
 #include "libFigure.h"
