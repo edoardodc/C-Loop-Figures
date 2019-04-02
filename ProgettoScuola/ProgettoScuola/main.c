@@ -25,6 +25,8 @@ int main() {
         printf("Inserire nome figura: ");
         scanf("%s", buff);
         
+        system("cls");
+        
         triangolo = strstr(buff, "triangolo");
         quadrato = strstr(buff, "quadrato");
         rettangolo = strstr(buff, "rettangolo");
