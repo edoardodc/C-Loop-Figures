@@ -36,7 +36,8 @@ void creaTriangoloRettangolo() {
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=0; i < nl; i++) {
         for (c=0; c<=i; c++) {
             printf(" %c", carattere);
@@ -51,7 +52,8 @@ void creaTriangoloEquilatero() {
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=nl; i > 0; i--) {
         for (c=0; c<i; c++) {
             printf(" ");
@@ -69,7 +71,8 @@ void creaQuadratoVuoto() {
     char carattere;
     carattere = cambiaCarattere();
     h = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=h; i != 0; i--) {
         for (c=h; c!=0; c--) {
             if ((i==1 || i == h) || ((c==1) || (c == h))) {
@@ -89,7 +92,8 @@ void creaQuadratoFarcito() {
     carattere = cambiaCarattere();
     carattere2 = cambiaCarattere();
     h = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=h; i != 0; i--) {
         for (c=h; c!=0; c--) {
             if (i==1 || i == h) {
@@ -110,7 +114,8 @@ void creaQuadratoPieno() {
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=nl; i != 0; i--) {
         for (c=nl; c!=0; c--) {
             printf(" %c", carattere);
@@ -127,7 +132,8 @@ void creaQuadratoParticolare() {
     carattere = cambiaCarattere();
     carattere2 = cambiaCarattere();
     nl = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i = nl; i > 0; i--) {
         for (c=0; c<i; c++) {
             printf(" %c", carattere2);
@@ -146,7 +152,8 @@ void creaRettangoloVuoto() {
     carattere = cambiaCarattere();
     h = chiediNumeroLato(2);
     b = chiediNumeroLato(3);
-    
+    printf("\n");
+
     for (i=h; i != 0; i--) {
         for (c=b; c!=0; c--) {
             if (i==1 || i == h) {
@@ -168,7 +175,8 @@ void creaRettangoloPieno() {
     carattere = cambiaCarattere();
     h = chiediNumeroLato(2);
     b = chiediNumeroLato(3);
-    
+    printf("\n");
+
     for (i=h; i != 0; i--) {
         for (c=b; c!=0; c--) {
             printf(" %c", carattere);
@@ -186,6 +194,8 @@ void creaRettangoloParticolare() {
     carattere2 = cambiaCarattere();
     h = chiediNumeroLato(2);
     b = chiediNumeroLato(3);
+    printf("\n");
+
     if (h > b) {
         f = h - b;
     }else if (b<f) {
@@ -231,7 +241,8 @@ void creaEllisse() {
     int i,j, raggio = 5;
     char carattere;
     carattere = cambiaCarattere();
-    
+    printf("\n");
+
     for (i=0; i<=2*raggio; i++) {
         for (j=0; j<=2*raggio; j++) {
             double distance = sqrt((double)(i-raggio)*(i-raggio) + (j-raggio)*(j-raggio));
@@ -251,7 +262,8 @@ void creaRombo() {
     carattere = cambiaCarattere();
     h = chiediNumeroLato(2);
     s = h - 1;
-    
+    printf("\n");
+
     for (k = 1; k <= h; k++) {
         for (c = 1; c <= s; c++)
             printf(" ");
@@ -276,7 +288,8 @@ void creaRombo() {
 
 void creaQuadratoPienoNumerato() {
     int c, i, nl = 3, num = 0;
-    
+    printf("\n");
+
     for (i=nl; i != 0; i--) {
         for (c=nl; c!=0; c--) {
             num++;
@@ -292,7 +305,8 @@ void creaTriangoloEquilateroVuoto() {
     char carattere;
     carattere = cambiaCarattere();
     h = chiediNumeroLato(2);
-    
+    printf("\n");
+
     for(i=1; i<=h; i++) {
         
         for(j=i; j<h; j++) {
@@ -317,7 +331,8 @@ void creaTriangoloRettangoloVuoto() {
     char carattere;
     carattere = cambiaCarattere();
     h = chiediNumeroLato(2);
-    
+    printf("\n");
+
     for(i=1; i<=h; i++) {
         for(j=1; j<=(2*i-1); j++)
         {
@@ -340,7 +355,8 @@ void creaCasa() {
     char carattere;
     carattere = cambiaCarattere();
     nl = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for (i=nl; i > 0; i--) {
         for (c=1; c<i; c++) {
             printf(" ");
@@ -373,7 +389,8 @@ void creaClessidra() {
     char carattere;
     carattere = cambiaCarattere();
     n = chiediNumeroLato(1);
-    
+    printf("\n");
+
     for(i = 1; i <= n; i++) {
         for(j = 1; j < i; j++)
             printf(" ");
