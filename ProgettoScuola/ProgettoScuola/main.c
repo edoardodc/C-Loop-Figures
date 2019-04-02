@@ -163,7 +163,6 @@ int main() {
         char scelta, *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
         int  entraNellaConclusione = 1;
 
-
         printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
         printf("Inserire nome figura: ");
         scanf("%s", buff);
@@ -196,7 +195,6 @@ int main() {
         }
 
         if (entraNellaConclusione == 1) {
-             
             printf("\n");
             printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
            scanf(" %c", &scelta);
@@ -204,16 +202,9 @@ int main() {
             if (scelta == '2') {
                 break;
             }
-
             system("cls");
         }
-
-
-
     } while (1);
-
-
     printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
-
 }
 
