@@ -1,412 +1,219 @@
-#ifndef libFigure_h
-#define libFigure_h
-#include <math.h>
-#endif /* libFigure_h */
+//
+//  main.c
+//  ProgettoScuola
+//  Created by Edoardo and Riccardo on 28/03/2019.
 
-/* Codice libreria */
+/* Made with <3 */
 
-char cambiaCarattere() {
-    char c;
-    printf("Inserire un carattere: ");
-    scanf(" %c", &c);
-    return c;
-}
+#include <stdio.h>
+#include "libFigure.h"
 
-int chiediNumeroLato(int name) {
-    int numero;
+void mostraMenuQuadrato(void);
+void mostraMenuRettangolo(void);
+void mostraMenuTriangoliEquilatero(void);
+void mostraMenuTriangoliRettangoli(void);
+void mostraMenuTriangoli(void);
+
+
+int main() {
     do {
-        if (name == 1) {
-            printf("Inserisci numero lato: ");
-        }else if (name == 2) {
-            printf("Inserisci numero altezza: ");
-        }else if (name == 3) {
-            printf("Inserisci numero base: ");
+        char buff[100];
+        char scelta, *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
+        int  entraNellaConclusione = 1;
+
+        printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
+        printf("Inserire nome figura: ");
+        scanf("%s", buff);
+
+        system("cls");
+
+        triangolo = strstr(buff, "triangolo");
+        quadrato = strstr(buff, "quadrato");
+        rettangolo = strstr(buff, "rettangolo");
+        ellisse = strstr(buff, "ellisse");
+        rombo = strstr(buff, "rombo");
+        casa = strstr(buff, "casa");
+        clessidra = strstr(buff, "clessidra");
+
+        if (triangolo != NULL) {
+            mostraMenuTriangoli();
+        } else if (quadrato != NULL) {
+            mostraMenuQuadrato();
+        } else if (rettangolo != NULL) {
+            mostraMenuRettangolo();
+        }else if (ellisse != NULL) {
+            creaEllisse();
+        } else if (rombo != NULL) {
+            creaRombo();
+        }else if (casa != NULL){
+            creaCasa();
+        }else if (clessidra != NULL){
+            creaClessidra();
+        } else {
+            printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
+            entraNellaConclusione = -1;
         }
-        scanf("%d", &numero);
-        if (numero < 0) {
-            printf("Inserire un valore positivo!\n");
-        }
-    }while(numero<0);
-    return numero;
-}
 
+        if (entraNellaConclusione == 1) {
+            printf("\n");
+            printf("Fantastico! premere qualsiasi tasto se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            scanf(" %c", &scelta);
 
-void creaTriangoloRettangolo() {
-    int c, i, nl;
-    char carattere;
-    carattere = cambiaCarattere();
-    nl = chiediNumeroLato(1);
-    printf("\n");
-
-    for (i=0; i < nl; i++) {
-        for (c=0; c<=i; c++) {
-            printf(" %c", carattere);
-        }
-        printf("\n");
-    }
-}
-
-
-void creaTriangoloEquilatero() {
-    int c, i, x, nl;
-    char carattere;
-    carattere = cambiaCarattere();
-    nl = chiediNumeroLato(1);
-    printf("\n");
-
-    for (i=nl; i > 0; i--) {
-        for (c=0; c<i; c++) {
-            printf(" ");
-        }
-        for (x=nl; x >= i; x--) {
-            printf(" %c", carattere);
-        }
-        printf("\n");
-    }
-}
-
-
-void creaQuadratoVuoto() {
-    int c, i, h;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(1);
-    printf("\n");
-
-    for (i=h; i != 0; i--) {
-        for (c=h; c!=0; c--) {
-            if ((i==1 || i == h) || ((c==1) || (c == h))) {
-                printf(" %c", carattere);
-            }else{
-                printf("  ");
+            if (scelta == '2') {
+                break;
             }
+            system("cls");
         }
-        printf("\n");
-    }
+    } while (1);
+    printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
 }
 
 
-void creaQuadratoFarcito() {
-    int c, i, h;
-    char carattere, carattere2;
-    carattere = cambiaCarattere();
-    carattere2 = cambiaCarattere();
-    h = chiediNumeroLato(1);
-    printf("\n");
+void mostraMenuQuadrato() {
+    char  buff[1000];
+    char *pieno, *vuoto, *particolare, *numerato, *farcito;
+    printf("Fantastico! Ecco qui i tipi di quadrati:\n\n - Pieno\n - Vuoto\n - Particolare\n - Numerato \n - Farcito\n\n");
 
-    for (i=h; i != 0; i--) {
-        for (c=h; c!=0; c--) {
-            if (i==1 || i == h) {
-                printf(" %c", carattere);
-            }else if ((c==1) || (c == h)){
-                printf(" %c", carattere);
-            }else{
-                printf(" %c", carattere2);
-            }
+    do {
+        printf("Inserire tipo di quadrato tra quelli elencati: ");
+        scanf("%s",buff);
+
+        vuoto = strstr(buff, "vuoto");
+        pieno = strstr(buff, "pieno");
+        particolare = strstr(buff, "particolare");
+        numerato = strstr(buff, "numerato");
+        farcito = strstr(buff, "farcito");
+
+        if (pieno != NULL) {
+            creaQuadratoPieno();
+            break;
+        } else if (vuoto != NULL) {
+            creaQuadratoVuoto();
+            break;
+        } else if (particolare != NULL) {
+            creaQuadratoParticolare();
+            break;
+        } else if (numerato != NULL) {
+            creaQuadratoPienoNumerato();
+            break;
+        }else if (farcito != NULL) {
+            creaQuadratoFarcito();
+            break;
+        }else{
+            printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
         }
-        printf("\n");
-    }
+    } while (1);
 }
 
 
-void creaQuadratoPieno() {
-    int c, i, nl;
-    char carattere;
-    carattere = cambiaCarattere();
-    nl = chiediNumeroLato(1);
-    printf("\n");
+void mostraMenuRettangolo() {
+    char  buff[100];
+    char *pieno, *vuoto, *particolare;
 
-    for (i=nl; i != 0; i--) {
-        for (c=nl; c!=0; c--) {
-            printf(" %c", carattere);
+    printf("Fantastico! Ecco qui i tipi di rettangoli:\n\n - Pieno\n - Vuoto\n - Particolare\n\n");
+
+    do {
+        printf("Inserire tipo di rettangolo tra quelli elencati: ");
+        scanf("%s",buff);
+
+        pieno = strstr(buff, "pieno");
+        vuoto = strstr(buff, "vuoto");
+        particolare = strstr(buff, "particolare");
+
+        if (pieno != NULL) {
+            creaRettangoloPieno();
+            break;
+        } else if (vuoto != NULL) {
+            creaRettangoloVuoto();
+            break;
+        } else if (particolare != NULL) {
+            creaRettangoloParticolare();
+            break;
+        } else {
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
-        printf("\n");
-        
-    }
+    } while (1);
 }
 
 
-void creaQuadratoParticolare() {
-    int c, i, x, nl;
-    char carattere, carattere2;
-    carattere = cambiaCarattere();
-    carattere2 = cambiaCarattere();
-    nl = chiediNumeroLato(1);
-    printf("\n");
+void mostraMenuTriangoliEquilatero() {
+    char  buff[100];
+    char *vuoto, *pieno;
+    system("cls");
 
-    for (i = nl; i > 0; i--) {
-        for (c=0; c<i; c++) {
-            printf(" %c", carattere2);
+    printf("Fantastico! Ecco qui i tipi di triangoli equilateri:\n\n - Vuoto\n - Pieno\n\n");
+
+    do {
+        printf("Inserire tipo di triangoli equilatero tra quelli elencati: ");
+        scanf("%s",buff);
+
+        vuoto = strstr(buff, "vuoto");
+        pieno = strstr(buff, "pieno");
+
+        if (pieno != NULL) {
+            creaTriangoloEquilatero();
+            break;
+        } else if (vuoto != NULL) {
+            creaTriangoloEquilateroVuoto();
+            break;
+        } else {
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
-        for (x=nl; x > i; x--) {
-            printf(" %c", carattere);
-        }
-        printf("\n");
-    }
+    } while (1);
 }
 
 
-void creaRettangoloVuoto() {
-    int c, i, h, b;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    b = chiediNumeroLato(3);
-    printf("\n");
+void mostraMenuTriangoliRettangoli() {
+    char  buff[100];
+    char *vuoto, *pieno;
+    system("cls");
+    printf("Fantastico! Ecco qui i tipi di triangoli rettangoli:\n\n - Vuoto\n - Pieno\n\n");
 
-    for (i=h; i != 0; i--) {
-        for (c=b; c!=0; c--) {
-            if (i==1 || i == h) {
-                printf(" %c", carattere);
-            }else if ((c==1) || (c == b)){
-                printf(" %c", carattere);
-            }else{
-                printf("  ");
-            }
+    do {
+        printf("Inserire tipo di triangolo rettangolo tra quelli elencati: ");
+        scanf("%s",buff);
+
+        vuoto = strstr(buff, "vuoto");
+        pieno = strstr(buff, "pieno");
+
+        if (pieno != NULL) {
+            creaTriangoloRettangolo();
+            break;
+        } else if (vuoto != NULL) {
+            creaTriangoloRettangoloVuoto();
+            break;
+        } else {
+            printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
         }
-        printf("\n");
-    }
+    }while (1);
 }
 
 
-void creaRettangoloPieno() {
-    int c, i, h, b;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    b = chiediNumeroLato(3);
-    printf("\n");
+void mostraMenuTriangoli() {
+    char  buff[100];
+    char *trRettangolo, *equilatero, *numerato;
 
-    for (i=h; i != 0; i--) {
-        for (c=b; c!=0; c--) {
-            printf(" %c", carattere);
+    printf("Fantastico! Ecco qui i tipi di triangoli:\n\n - Rettangolo\n - Equilatero\n - Numerato\n\n");
+
+    do {
+        printf("Inserire tipo di triangoli tra quelli elencati: ");
+        scanf("%s",buff);
+
+        equilatero = strstr(buff, "equilatero");
+        trRettangolo = strstr(buff, "rettangolo");
+        numerato = strstr(buff, "numerato");
+
+        if (equilatero != NULL) {
+            mostraMenuTriangoliEquilatero();
+            break;
+        } else if (trRettangolo != NULL) {
+            mostraMenuTriangoliRettangoli();
+            break;
+        } else if (numerato != NULL) {
+            creaTriangoloNumero();
+            break;
+        } else {
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
-        printf("\n");
-        
-    }
-}
-
-
-void creaRettangoloParticolare() {
-    int c, i, x, b, h, f = 0, g = 0;
-    char carattere, carattere2;
-    carattere = cambiaCarattere();
-    carattere2 = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    b = chiediNumeroLato(3);
-    printf("\n");
-
-    if (h > b) {
-        f = h - b;
-    }else if (b<f) {
-        g = b - h;
-    }
-    for (i=h+g; i > 0; i--) {
-        for (c=0; c <i ; c++) {
-            printf(" %c", carattere2);
-        }
-        for (x=b+f; x > i; x--) {
-            printf(" %c", carattere);
-        }
-        printf("\n");
-    }
-}
-
-
-void creaTriangoloNumero() {
-    int i, space, h = 5, k = 0, c = 0, c1 = 0;
-    
-    for(i=1; i<=h; ++i) {
-        for(space=1; space <= h-i; ++space) {
-            printf("  ");
-            ++c;
-        }
-        while(k != 2*i-1) {
-            if (c <= h-1) {
-                printf("%d ", i+k);
-                ++c;
-            } else {
-                ++c1;
-                printf("%d ", (i+k-2*c1));
-            }
-            ++k;
-        }
-        c1 = c = k = 0;
-        printf("\n");
-    }
-}
-
-
-void creaEllisse() {
-    int i,j, raggio = 5;
-    char carattere;
-    carattere = cambiaCarattere();
-    printf("\n");
-
-    for (i=0; i<=2*raggio; i++) {
-        for (j=0; j<=2*raggio; j++) {
-            double distance = sqrt((double)(i-raggio)*(i-raggio) + (j-raggio)*(j-raggio));
-            if (distance>raggio-0.5 && distance<raggio+0.5) {
-                printf("%c", carattere);
-            } else {
-                printf(" ");}
-        }
-        printf("\n");
-    }
-}
-
-
-void creaRombo() {
-    int h, c, k, s = 1;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    s = h - 1;
-    printf("\n");
-
-    for (k = 1; k <= h; k++) {
-        for (c = 1; c <= s; c++)
-            printf(" ");
-        s--;
-        for (c = 1; c <= 2*k-1; c++)
-            printf("%c", carattere);
-        printf("\n");
-    }
-    
-    s = 1;
-    
-    for (k = 1; k <= h - 1; k++) {
-        for (c = 1; c <= s; c++)
-            printf(" ");
-        s++;
-        for (c = 1 ; c <= 2*(h-k)-1; c++)
-            printf("%c", carattere);
-        printf("\n");
-    }
-}
-
-
-void creaQuadratoPienoNumerato() {
-    int c, i, nl = 3, num = 0;
-    printf("\n");
-
-    for (i=nl; i != 0; i--) {
-        for (c=nl; c!=0; c--) {
-            num++;
-            printf(" %d", num);
-        }
-        printf("\n");
-    }
-}
-
-
-void creaTriangoloEquilateroVuoto() {
-    int i, j, h;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    printf("\n");
-
-    for(i=1; i<=h; i++) {
-        
-        for(j=i; j<h; j++) {
-            printf(" ");
-        }
-        
-        for(j=1; j<=(2*i-1); j++) {
-            if(i==h || j==1 || j==(2*i-1)) {
-                printf("%c", carattere);
-            } else {
-                printf(" ");
-            }
-        }
-        printf("\n");
-    }
-    
-}
-
-
-void creaTriangoloRettangoloVuoto() {
-    int i, j, h;
-    char carattere;
-    carattere = cambiaCarattere();
-    h = chiediNumeroLato(2);
-    printf("\n");
-
-    for(i=1; i<=h; i++) {
-        for(j=1; j<=(2*i-1); j++)
-        {
-            if(i==h || j==1 || j==(2*i-1)) {
-                printf("%c", carattere);
-            } else {
-                printf(" ");
-            }
-        }
-        for(j=i; j<h; j++) {
-            printf(" ");
-        }
-        printf("\n");
-    }
-}
-
-
-void creaCasa() {
-    int c, i, x, nl, a, b, h;
-    char carattere;
-    carattere = cambiaCarattere();
-    nl = chiediNumeroLato(1);
-    printf("\n");
-
-    for (i=nl; i > 0; i--) {
-        for (c=1; c<i; c++) {
-            printf(" ");
-        }
-        for (x=nl; x >= i; x--) {
-            printf(" %c", carattere);
-        }
-        printf("\n");
-    }
-    
-    h = nl;
-    
-    for (b=h; b != 0; b--) {
-        for (a=h; a!=0; a--) {
-            if (b==1 || b == h) {
-                printf(" %c", carattere);
-            }else if ((a==1) || (a == h)){
-                printf(" %c", carattere);
-            }else{
-                printf("  ");
-            }
-        }
-        printf("\n");
-    }
-}
-
-
-void creaClessidra() {
-    int n,i,j;
-    char carattere;
-    carattere = cambiaCarattere();
-    n = chiediNumeroLato(1);
-    printf("\n");
-
-    for(i = 1; i <= n; i++) {
-        for(j = 1; j < i; j++)
-            printf(" ");
-        
-        for(j = i; j <= n; j++)
-            printf("%c ", carattere);
-        
-        printf("\n");
-    }
-    
-    for(i = 1; i <= n; i++) {
-        for(j = 1; j <= n-i; j++)
-            printf(" ");
-        
-        for(j = 1; j <= i; j++)
-            printf("%c ", carattere);
-        printf("\n");
-    }
+    } while (1);
 }
