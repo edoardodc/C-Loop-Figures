@@ -2,7 +2,7 @@
 //  main.c
 //  ProgettoScuola
 //
-//  Created by Edoardo de Cal on 28/03/2019.
+//  Created by Edoardo de Cal and Riccardo Lapi on 28/03/2019.
 //  Copyright © 2019 Edoardo de Cal. All rights reserved.
 //
 
@@ -24,7 +24,7 @@ void mostraMenuQuadrato() {
         particolare = strstr(buff, "particolare");
         numerato = strstr(buff, "numerato");
         farcito = strstr(buff, "farcito");
-        
+
         if (pieno != NULL) {
             creaQuadratoPieno();
             break;
@@ -160,8 +160,9 @@ void mostraMenuTriangoli() {
 int main() {
     do {
         char buff[100];
-        char *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
-        int scelta, entraNellaConclusione = 1;
+        char scelta, *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
+        int  entraNellaConclusione = 1, fine = 0;
+
 
         printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
         printf("Inserire nome figura: ");
@@ -195,16 +196,22 @@ int main() {
         }
 
         if (entraNellaConclusione == 1) {
+                fine = 1;
             printf("\n");
             printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
-            scanf("%d", &scelta);
+           scanf(" %c", &scelta);
 
-            if (scelta == 2) {
+            if (scelta == '2') {
                 break;
             }
+
+            system("cls");
         }
 
+
+
     } while (1);
+
 
     printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
 
