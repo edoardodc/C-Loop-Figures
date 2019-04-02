@@ -8,6 +8,64 @@
 #include <stdio.h>
 #include "libFigure.h"
 
+void mostraMenuQuadrato(void);
+void mostraMenuRettangolo(void);
+void mostraMenuTriangoliEquilatero(void);
+void mostraMenuTriangoliRettangoli(void);
+void mostraMenuTriangoli(void);
+
+
+int main() {
+    do {
+        char buff[100];
+        char scelta, *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
+        int  entraNellaConclusione = 1;
+        
+        printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
+        printf("Inserire nome figura: ");
+        scanf("%s", buff);
+        
+        triangolo = strstr(buff, "triangolo");
+        quadrato = strstr(buff, "quadrato");
+        rettangolo = strstr(buff, "rettangolo");
+        ellisse = strstr(buff, "ellisse");
+        rombo = strstr(buff, "rombo");
+        casa = strstr(buff, "casa");
+        clessidra = strstr(buff, "clessidra");
+        
+        if (triangolo != NULL) {
+            mostraMenuTriangoli();
+        } else if (quadrato != NULL) {
+            mostraMenuQuadrato();
+        } else if (rettangolo != NULL) {
+            mostraMenuRettangolo();
+        }else if (ellisse != NULL) {
+            creaEllisse();
+        } else if (rombo != NULL) {
+            creaRombo();
+        }else if (casa != NULL){
+            creaCasa();
+        }else if (clessidra != NULL){
+            creaClessidra();
+        } else {
+            printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
+            entraNellaConclusione = -1;
+        }
+        
+        if (entraNellaConclusione == 1) {
+            printf("\n");
+            printf("Fantastico! premere qualsiasi tasto se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            scanf(" %c", &scelta);
+            
+            if (scelta == '2') {
+                break;
+            }
+            system("cls");
+        }
+    } while (1);
+    printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
+}
+
 
 void mostraMenuQuadrato() {
     char  buff[1000];
@@ -44,6 +102,7 @@ void mostraMenuQuadrato() {
         }
     } while (1);
 }
+
 
 void mostraMenuRettangolo() {
     char  buff[1000];
@@ -100,6 +159,7 @@ void mostraMenuTriangoliEquilatero() {
     } while (1);
 }
 
+
 void mostraMenuTriangoliRettangoli() {
     char  buff[1000];
     char *vuoto, *pieno;
@@ -124,6 +184,7 @@ void mostraMenuTriangoliRettangoli() {
         }
     }while (1);
 }
+
 
 void mostraMenuTriangoli() {
     char  buff[1000];
@@ -153,57 +214,3 @@ void mostraMenuTriangoli() {
         }
     } while (1);
 }
-
-
-
-int main() {
-    do {
-        char buff[100];
-        char scelta, *triangolo, *quadrato, *rettangolo, *ellisse, *rombo, *casa, *clessidra;
-        int  entraNellaConclusione = 1;
-        
-        printf("Ecco le figure che oggi abbiamo a disposizione:\n\n - Rettangolo\n - Clessidra\n - Triangolo\n - Quadrato\n - Ellisse\n - Rombo\n - Casa\n\n");
-        printf("Inserire nome figura: ");
-        scanf("%s", buff);
-        
-        triangolo = strstr(buff, "triangolo");
-        quadrato = strstr(buff, "quadrato");
-        rettangolo = strstr(buff, "rettangolo");
-        ellisse = strstr(buff, "ellisse");
-        rombo = strstr(buff, "rombo");
-        casa = strstr(buff, "casa");
-        clessidra = strstr(buff, "clessidra");
-        
-        if (triangolo != NULL) {
-            mostraMenuTriangoli();
-        } else if (quadrato != NULL) {
-            mostraMenuQuadrato();
-        } else if (rettangolo != NULL) {
-            mostraMenuRettangolo();
-        }else if (ellisse != NULL) {
-            creaEllisse();
-        } else if (rombo != NULL) {
-            creaRombo();
-        }else if (casa != NULL){
-            creaCasa();
-        }else if (clessidra != NULL){
-            creaClessidra();
-        } else {
-            printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
-            entraNellaConclusione = -1;
-        }
-        
-        if (entraNellaConclusione == 1) {
-            printf("\n");
-            printf("Fantastico! premere qualsiasi tasto se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
-            scanf(" %c", &scelta);
-            
-            if (scelta == '2') {
-                break;
-            }
-            system("cls");
-        }
-    } while (1);
-    printf("D'accordo! grazie per essere stati con noi (≧◡≦)\n");
-}
-
