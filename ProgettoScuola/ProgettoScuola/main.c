@@ -130,7 +130,7 @@ void mostraMenuRettangolo() {
             creaRettangoloParticolare();
             break;
         } else {
-            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -156,7 +156,7 @@ void mostraMenuTriangoliEquilatero() {
             creaTriangoloEquilateroVuoto();
             break;
         } else {
-            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
     } while (1);
 }
@@ -212,7 +212,7 @@ void mostraMenuTriangoli() {
             creaTriangoloNumero();
             break;
         } else {
-            printf("Temo proprio che %s non esista e non sia in elenco!\n", buff);
+            printf("%s che nome buffo! ma temo che non sia in elenco!\n", buff);
         }
     } while (1);
 }
