@@ -105,7 +105,7 @@ void mostraMenuQuadrato() {
 
 
 void mostraMenuRettangolo() {
-    char  buff[1000];
+    char  buff[100];
     char *pieno, *vuoto, *particolare;
     
     printf("Fantastico! Ecco qui i tipi di rettangoli:\n\n - Pieno\n - Vuoto\n - Particolare\n\n");
@@ -135,7 +135,7 @@ void mostraMenuRettangolo() {
 
 
 void mostraMenuTriangoliEquilatero() {
-    char  buff[1000];
+    char  buff[100];
     char *vuoto, *pieno;
     
     printf("Fantastico! Ecco qui i tipi di triangoli equilateri:\n\n - Vuoto\n - Pieno\n\n");
@@ -161,7 +161,7 @@ void mostraMenuTriangoliEquilatero() {
 
 
 void mostraMenuTriangoliRettangoli() {
-    char  buff[1000];
+    char  buff[100];
     char *vuoto, *pieno;
     
     printf("Fantastico! Ecco qui i tipi di triangoli rettangoli:\n\n - Vuoto\n - Pieno\n\n");
@@ -187,7 +187,7 @@ void mostraMenuTriangoliRettangoli() {
 
 
 void mostraMenuTriangoli() {
-    char  buff[1000];
+    char  buff[100];
     char *trRettangolo, *equilatero, *numerato;
     
     printf("Fantastico! Ecco qui i tipi di triangoli:\n\n - Rettangolo\n - Equilatero\n - Numerato\n\n");

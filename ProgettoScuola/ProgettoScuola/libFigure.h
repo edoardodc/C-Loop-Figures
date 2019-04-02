@@ -72,9 +72,7 @@ void creaQuadratoVuoto() {
     
     for (i=h; i != 0; i--) {
         for (c=h; c!=0; c--) {
-            if (i==1 || i == h) {
-                printf(" %c", carattere);
-            }else if ((c==1) || (c == h)){
+            if ((i==1 || i == h) || ((c==1) || (c == h))) {
                 printf(" %c", carattere);
             }else{
                 printf("  ");
