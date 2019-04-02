@@ -194,7 +194,7 @@ int main() {
 
         if (entraNellaConclusione == 1) {
             printf("\n");
-            printf("Fantastico! premere 1 se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
+            printf("Fantastico! premere qualsiasi tasto se vuoi continuare l'esperienze oppure premere 2 se vuoi concluderla: ");
            scanf(" %c", &scelta);
 
             if (scelta == '2') {
