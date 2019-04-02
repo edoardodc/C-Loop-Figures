@@ -1,8 +1,9 @@
 //
 //  main.c
 //  ProgettoScuola
-//  Created by Edoardo de Cal and Riccardo Lapi on 28/03/2019.
+//  Created by Edoardo and Riccardo on 28/03/2019.
 
+/* Made with <3 */
 
 #include <stdio.h>
 #include "libFigure.h"
@@ -17,8 +18,8 @@ void mostraMenuQuadrato() {
         printf("Inserire tipo di quadrato tra quelli elencati: ");
         scanf("%s",buff);
 
-        pieno = strstr(buff, "pieno");
         vuoto = strstr(buff, "vuoto");
+        pieno = strstr(buff, "pieno");
         particolare = strstr(buff, "particolare");
         numerato = strstr(buff, "numerato");
         farcito = strstr(buff, "farcito");
@@ -121,7 +122,7 @@ void mostraMenuTriangoliRettangoli() {
         } else {
             printf("%s che buffo nome! Temo che non sia in elenco!\n", buff);
         }
-    } while (1);
+    }while (1);
 }
 
 void mostraMenuTriangoli() {
