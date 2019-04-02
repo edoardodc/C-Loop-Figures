@@ -1,6 +1,7 @@
 //
 //  main.c
 //  ProgettoScuola
+//  Created by Edoardo de Cal and Riccardo Lapi on 28/03/2019.
 
 
 #include <stdio.h>
